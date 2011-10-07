@@ -2,19 +2,18 @@ $(function(){
       function fill_list(data) {
           $("#list").html("");
           for (var i = 0; i < data.length; i++) {
-              $("#list").append("<div class=\"well\"><strong>" + data[i].desc + "</strong> - " + data[i].time + "</div>");
+              $("#list").append('<div class="well"><strong>' + data[i].desc + "</strong> - " + data[i].time + "</div>");
           }
       }
 
-      $("#twitter").bind("click", function() {
-                             $.get("/api.php?service=twitter", function(data) {
-                                       fill_list(data);
-                                   });
-                         });
-      $("#yahoo").bind("click", function() {
-                             $.get("/api.php?service=yahoo", function(data) {
-                                       fill_list(data);
-                                   });
-                         });
+      function request_wrapper(service) {
+          $("#list").html('<div class="container"><img src="/img/loading.gif" alt="loading" /></div>');
+          $.get("/api.php?service=" + service, function(data) {
+              fill_list(data);
+          });
+      }
+
+      $("#twitter").bind("click", function() { request_wrapper("twitter"); });
+      $("#yahoo").bind("click", function() { request_wrapper("yahoo"); });
 })
 
