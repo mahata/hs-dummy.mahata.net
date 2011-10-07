@@ -1,7 +1,7 @@
 <?php
 
-require_once ("BaseData.class.inc");
-require_once (dirname(__FILE__) . "/../twitter/Twitter.class.inc");
+require_once(dirname(__FILE__) . "/BaseData.class.inc");
+require_once(dirname(__FILE__) . "/../twitter/Twitter.class.inc");
 
 class TwitterData extends BaseData
 {

@@ -1,5 +1,7 @@
 <?php
 
+require_once(dirname(__FILE__) . "/BaseData.class.inc");
+
 class YahooRssData extends BaseData
 {
   public function getJson() {
