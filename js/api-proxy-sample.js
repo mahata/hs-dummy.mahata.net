@@ -13,8 +13,8 @@ $(function(){
           });
       }
 
-      $("#twitter").bind("click", function() { request_wrapper("twitter"); });
-      $("#yahoo").bind("click", function() { request_wrapper("yahoo"); });
-      $("#wordpress").bind("click", function() { request_wrapper("wordpress"); });
+      $("#twitter").bind("click", function() { request_wrapper("Twitter"); });
+      $("#yahoo").bind("click", function() { request_wrapper("YahooRss"); });
+      $("#wordpress").bind("click", function() { request_wrapper("WordPress"); });
 })
 
