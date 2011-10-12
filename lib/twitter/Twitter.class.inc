@@ -1,6 +1,6 @@
 <?php
 
-require_once("twitteroauth.php");
+require_once(dirname(__FILE__) . "/twitteroauth.php");
 
 class Twitter
 {
@@ -9,11 +9,11 @@ class Twitter
 
   public function __construct() {
     // configuration should be fetched from cache data if it is possible
-    $conf = parse_ini_file(dirname(__FILE__) . "/twitter.ini", true);
-    $this->to = new TwitterOAuth($conf["auth"]["consumer_key"],
-                           $conf["auth"]["consumer_secret"],
-                           $conf["auth"]["access_token"],
-                           $conf["auth"]["access_token_secret"]);
+    $this->conf = parse_ini_file(dirname(__FILE__) . "/../../conf/twitter.ini", true);
+    $this->to = new TwitterOAuth($this->conf["auth"]["consumer_key"],
+                                 $this->conf["auth"]["consumer_secret"],
+                                 $this->conf["auth"]["access_token"],
+                                 $this->conf["auth"]["access_token_secret"]);
   }
 
   public function post($text) {

@@ -8,12 +8,13 @@ $(function(){
 
       function request_wrapper(service) {
           $("#list").html('<div class="container"><img src="/img/loading.gif" alt="loading" /></div>');
-          $.get("/api.php?service=" + service, function(data) {
+          $.get("/api-read.php?service=" + service, function(data) {
               fill_list(data);
           });
       }
 
       $("#twitter").bind("click", function() { request_wrapper("twitter"); });
       $("#yahoo").bind("click", function() { request_wrapper("yahoo"); });
+      $("#wordpress").bind("click", function() { request_wrapper("wordpress"); });
 })
 
