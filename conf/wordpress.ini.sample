@@ -1,0 +1,6 @@
+[auth]
+host = "xxx.wordpress.com";
+xmlrpc_path = "/xmlrpc.php";
+app_key = "appkey";
+user = "user";
+pass ="pass";
